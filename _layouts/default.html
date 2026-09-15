@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>{% if page.title %}{{ page.title }} — {% endif %}Piyush Saggi</title>
+  <meta name="description" content="{{ page.description | default: site.description | escape }}">
+  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+</head>
+<body>
+<header>
+  <a class="brand" href="{{ '/' | relative_url }}">Piyush Saggi</a>
+  <nav>
+    <a href="{{ '/#experiments' | relative_url }}">Experiments</a>
+    <a href="{{ '/#writing' | relative_url }}">Writing</a>
+    <a href="{{ '/#projects' | relative_url }}">Projects</a>
+    <a href="{{ '/#about' | relative_url }}">About</a>
+    <a class="linkedin-link" href="https://www.linkedin.com/in/psaggi/" target="_blank" rel="noopener noreferrer" aria-label="Piyush Saggi on LinkedIn" title="LinkedIn">in</a>
+  </nav>
+</header>
+{{ content }}
+<footer><span>© Piyush Saggi</span><span>{{ page.footer_text | default: "Built as an experiment, naturally." }}</span></footer>
+</body>
+</html>

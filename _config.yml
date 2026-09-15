@@ -1,0 +1,27 @@
+title: Piyush Saggi
+description: Things I'm building, investigating and learning — visual intelligence, AI, startups and learning.
+url: "https://psaggi.github.io"
+baseurl: ""
+permalink: pretty
+
+collections:
+  experiments:
+    output: true
+    permalink: /experiments/:name/
+  writing:
+    output: true
+    permalink: /writing/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: experiments
+    values:
+      layout: article
+      section: Experiments
+  - scope:
+      path: ""
+      type: writing
+    values:
+      layout: article
+      section: Writing

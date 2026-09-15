@@ -1,0 +1,6 @@
+---
+layout: default
+title: Experiments
+description: Experiments by Piyush Saggi.
+---
+<main class="collection-page"><p class="eyebrow">EXPERIMENTS</p><h1>Questions are more useful<br>when you can test them.</h1><div class="collection-list">{% assign items = site.experiments | sort: 'date' | reverse %}{% for item in items %}<a href="{{ item.url | relative_url }}"><span>{{ item.date | date: "%Y-%m-%d" }}</span><strong>{{ item.title }}</strong><i>{{ item.eyebrow }}</i></a>{% endfor %}</div></main>

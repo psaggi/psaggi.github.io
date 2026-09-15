@@ -1,0 +1,6 @@
+---
+layout: default
+title: Writing
+description: Writing by Piyush Saggi.
+---
+<main class="collection-page"><p class="eyebrow">WRITING</p><h1>Notes from doing the work.</h1><div class="collection-list">{% assign items = site.writing | sort: 'date' | reverse %}{% for item in items %}<a href="{{ item.url | relative_url }}"><span>{{ item.date | date: "%Y-%m-%d" }}</span><strong>{{ item.title }}</strong><i>{{ item.category }}</i></a>{% endfor %}</div></main>

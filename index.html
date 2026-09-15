@@ -1,0 +1,23 @@
+---
+layout: default
+---
+<main>
+<section class="hero"><div><p class="eyebrow">BUILDER · FOUNDER · CURIOUS HUMAN</p><h1>Things I’m building,<br>investigating <em>& learning.</em></h1><p class="lede">I’m interested in what happens when AI leaves the chat box and starts seeing, creating and acting in the world — plus the occasional lesson earned the expensive way by building companies.</p></div><div class="hero-art" aria-hidden="true"><img src="{{ '/assets/hero-visual-intelligence.png' | relative_url }}" alt=""></div></section>
+
+<section id="experiments"><div class="section-head"><p class="eyebrow">EXPERIMENTS</p><h2>Questions are more useful<br>when you can test them.</h2></div><div class="grid">
+{% assign experiments = site.experiments | sort: 'date' | reverse %}
+{% for experiment in experiments limit:3 %}
+<a class="card{% if forloop.first %} feature{% endif %}" href="{{ experiment.url | relative_url }}">
+{% if experiment.sketch == "camera" %}<div class="sketch"><svg viewBox="0 0 360 190"><rect x="37" y="38" width="85" height="58" rx="8"/><circle cx="79" cy="67" r="16"/><path d="M122 68 C169 48 199 51 239 70 S294 103 326 79"/><path d="M43 150 q35 -52 71 0 M151 150 q35 -71 70 0 M254 150 q28 -45 57 0"/></svg></div>{% endif %}
+<p class="tag">{{ experiment.eyebrow }}</p><h3>{{ experiment.title }}</h3><p>{{ experiment.description }}</p><span>Read experiment →</span></a>
+{% endfor %}
+</div><p class="collection-link"><a href="{{ '/experiments/' | relative_url }}">View all experiments →</a></p></section>
+
+<section id="writing" class="split"><div><p class="eyebrow">WRITING</p><h2>Notes from doing the work.</h2></div><div class="list">
+{% assign writings = site.writing | sort: 'date' | reverse %}
+{% for item in writings limit:3 %}<a href="{{ item.url | relative_url }}"><span>{{ item.category }}</span><strong>{{ item.title }}</strong><i>{{ item.status | default: item.date | date: "%b %Y" }}</i></a>{% endfor %}
+<p class="collection-link"><a href="{{ '/writing/' | relative_url }}">View all writing →</a></p></div></section>
+
+<section id="projects"><p class="eyebrow">PROJECTS</p><div class="project-row"><div><b>01</b><h3>Evo</h3><p>Exploring AI-native video creation and visual storytelling.</p></div><div><b>02</b><h3>Ambient Visual Intelligence</h3><p>Teaching cameras to understand what happens in real spaces over time.</p></div><div><b>03</b><h3>CGM</h3><p>An automatic dashboard for tracking company growth signals over time.</p></div></div></section>
+<section id="about" class="about"><p class="eyebrow">ABOUT</p><h2>I’ve spent my career somewhere between technology, customers and building things.</h2><p>Former founder & CEO of Parmonic. Earlier, Microsoft. Currently exploring AI through real products, experiments and questions that refuse to leave me alone.</p></section>
+</main>

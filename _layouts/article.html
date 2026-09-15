@@ -1,0 +1,13 @@
+---
+layout: default
+---
+<main class="article">
+  <p class="eyebrow">{{ page.eyebrow | default: page.category | upcase }}</p>
+  <h1>{{ page.title }}</h1>
+  {% if page.description %}<p class="dek">{{ page.description }}</p>{% endif %}
+  {% if page.sketch == "camera" %}
+  <div class="article-sketch"><svg viewBox="0 0 700 280"><rect x="65" y="61" width="133" height="88" rx="10"/><circle cx="131" cy="105" r="24"/><path d="M198 106 C270 76 321 83 385 110 S487 160 623 89"/><path d="M79 226 q55 -81 110 0 M251 226 q55 -109 110 0 M450 226 q49 -76 98 0"/><path class="ghost" d="M48 43 C181 8 307 47 421 31 S584 13 660 41"/></svg></div>
+  {% endif %}
+  {{ content }}
+  <a class="back" href="{{ '/' | relative_url }}#{{ page.section | downcase }}">← Back to {{ page.section | downcase }}</a>
+</main>
