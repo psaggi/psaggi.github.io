@@ -1,0 +1,25 @@
+---
+layout: null
+permalink: /sitemap.xml
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://psaggi.com/</loc></url>
+{% for experiment in site.experiments %}
+  <url>
+    <loc>https://psaggi.com{{ experiment.url }}</loc>
+    {% if experiment.date %}<lastmod>{{ experiment.date | date_to_xmlschema }}</lastmod>{% endif %}
+  </url>
+{% endfor %}
+{% for post in site.posts %}
+  <url>
+    <loc>https://psaggi.com{{ post.url }}</loc>
+    {% if post.date %}<lastmod>{{ post.date | date_to_xmlschema }}</lastmod>{% endif %}
+  </url>
+{% endfor %}
+{% for page in site.pages %}
+  {% unless page.url == '/sitemap.xml' or page.url == '/robots.txt' %}
+  <url><loc>https://psaggi.com{{ page.url }}</loc></url>
+  {% endunless %}
+{% endfor %}
+</urlset>
