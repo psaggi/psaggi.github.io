@@ -5,8 +5,34 @@
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <title>{% if page.title %}{{ page.title }} — {% endif %}Piyush Saggi</title>
   <meta name="description" content="{{ page.description | default: site.description | escape }}">
-  <link rel="canonical" href="{{ page.url | absolute_url }}">
-  <link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
+<link rel="canonical" href="{{ page.url | absolute_url }}">
+
+{% if page.url == "/" %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://psaggi.com/#website",
+      "url": "https://psaggi.com/",
+      "name": "Piyush Saggi"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://psaggi.com/#person",
+      "name": "Piyush Saggi",
+      "url": "https://psaggi.com/",
+      "sameAs": [
+        "https://www.linkedin.com/in/psaggi/"
+      ]
+    }
+  ]
+}
+</script>
+{% endif %}
+
+<link rel="stylesheet" href="{{ '/assets/style.css' | relative_url }}">
 </head>
 <body>
 <header>
